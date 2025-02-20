@@ -9,9 +9,15 @@ document.getElementById('button').addEventListener('click', () => {
 
 let eject = document.getElementById('photo');
 
-document.getElementById('button').addEventListener('click', () => {
-  eject.classList.remove('eject-photo');
-  setTimeout(function(){
-  eject.classList.add('eject-photo');
-  },500);
+document.getElementById('button').addEventListener('click', function() {
+    // Adiciona a animação de flash
+    document.querySelector('.flash').classList.add('flash-animation');
+    
+    // Remove a animação de flash após a conclusão
+    setTimeout(function() {
+        document.querySelector('.flash').classList.remove('flash-animation');
+    }, 200);
+
+    // Adiciona a animação de ejeção da foto
+    document.getElementById('photo').classList.add('eject-photo');
 });
